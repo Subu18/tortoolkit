@@ -42,41 +42,41 @@ async def handle_user_setting_callback(e):
         return
     if cmd[1] == "mycmd":
         pass
-    elif cmd[1] == "rclonemenu":
+    elif cmd[1] == "Rclonemenu":
         # this is menu
         mmes = await e.get_message()
         await handle_user_settings(mmes,True,"\nrclone config menu. TD= Team Drive, ND= Normal Drive",submenu="rclonemenu",sender_id=sender_id)
-    elif cmd[1] == "thumbmenu":
+    elif cmd[1] == "Thumbmenu":
         # this is menu
         mmes = await e.get_message()
         await handle_user_settings(mmes,True,"\nthumbnail menu.",submenu="thumbmenu",sender_id=sender_id)
-    elif cmd[1] == "rcloneconfig":
+    elif cmd[1] == "Rcloneconfig":
         await e.answer("send the rclone config file which you have generated.",alert=True)
         mmes = await e.get_message()
         await mmes.edit(f"{mmes.raw_text}\n/ignore to go back",buttons=None)
         val = await get_value(e,True)
         
         await general_input_manager(e,mmes,"RCLONE_CONFIG","str",val,sender_id,"rclonemenu")  
-    elif cmd[1] == "setthumb":
+    elif cmd[1] == "Setthumb":
         await e.answer("send the thumbnail.", alert=True)
         mmes = await e.get_message()
         await mmes.edit(f"{mmes.raw_text}\n /ignore to go back.", buttons=None)
         val = await get_value(e,file=True,photo=True)
         await general_input_manager(e,mmes,"THUMBNAIL","str",val,sender_id,"thumbmenu")  
 
-    elif cmd[1] == "selfdest":
+    elif cmd[1] == "Selfdest":
         await e.answer("Closed")
         await e.delete()
-    elif cmd[1] == "change_drive":
+    elif cmd[1] == "Change_drive":
         await e.answer(f"changed default drive to {cmd[2]}.",alert=True)
         user_db.set_var("DEF_RCLONE_DRIVE",str(cmd[2]), e.sender_id)
 
         await handle_user_settings(await e.get_message(),True,f"<b><u>changed the default drive to {cmd[2]}</b></u>","rclonemenu",sender_id=sender_id)
-    elif cmd[1] == "mainmenu":
+    elif cmd[1] == "Mainmenu":
         # this is menu
         mmes = await e.get_message()
         await handle_user_settings(mmes,True,sender_id=sender_id)
-    elif cmd[1] == "fdocs":
+    elif cmd[1] == "Fdocs":
         await e.answer("")
         if cmd[2] == "true":
             val = True
@@ -85,7 +85,7 @@ async def handle_user_setting_callback(e):
         
         user_db.set_var("FORCE_DOCUMENTS",val, str(e.sender_id))
         await handle_user_settings(await e.get_message(),True,f"<b><u>changed the value to {val} of force documents.</b></u>",sender_id=sender_id)
-    elif cmd[1] == "disablethumb":
+    elif cmd[1] == "Disablethumb":
         await e.answer("")
         if cmd[2] == "true":
             val = True
@@ -109,10 +109,10 @@ async def handle_user_settings(e,edit=False,msg="",submenu=None,sender_id=None):
     ]
     
     if submenu is None:
-        await get_bool_variable("FORCE_DOCUMENTS","FORCE_DOCUMENTS",menu,"fdocs",sender_id)#
-        #await get_string_variable("RCLONE_CONFIG",menu,"rcloneconfig",session_id)
-        await get_sub_menu("open rclone menu","rclonemenu",sender_id,menu)#
-        await get_sub_menu("open thumbnail menu","thumbmenu",sender_id,menu)#
+        await get_bool_variable("FORCE_DOCUMENTS","FORCE_DOCUMENTS",Menu,"fdocs",sender_id)#
+        #await get_string_variable("RCLONE_CONFIG",Menu,"Rcloneconfig",session_id)
+        await get_sub_menu("open rclone menu","Rclonemenu",sender_id,menu)#
+        await get_sub_menu("open thumbnail menu","Thumbmenu",sender_id,menu)#
         # thumbnail
         menu.append(
             [KeyboardButtonCallback("close Menu",f"usettings selfdest {sender_id}".encode("UTF-8"))]
