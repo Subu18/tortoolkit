@@ -7,7 +7,7 @@
 - Click the button below
 - Add required variables
 - Build
-<p><a href="https://heroku.com/deploy?template=https://github.com/reaitten/ttk"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://heroku.com/deploy?template= https://github.com/Subu18/tortoolkit"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 ## Deploy via Heroku CLI
 - Download [deploy.zip](https://github.com/reaitten/tk/releases/tag/v1.0).
@@ -74,9 +74,9 @@ git push heroku main
 
 `DEFAULT_TIMEOUT` = Default destination to choose if the user fails to choose upload destination in 60 seconds.
 
-`RCLONE_CONFIG` = rclone file path. usually it's /app/rclone.conf if you uploaded rclone.conf onto the root directory of folder.
+`RCLONE_CONFIG` = Rclone file path. usually it's /app/rclone.conf if you uploaded rclone.conf onto the root directory of folder.
 
-`DEF_RCLONE_DRIVE` = Default Drive for rclone to use. e.g: if my drive is called `tk-drive`, then i would add the value, `tk-drive`.
+`DEF_RCLONE_DRIVE` = Default Drive for rclone to use. e.g: if my drive is called `msg-drive`, then i would add the value, `msg-drive`.
 
 `MAX_YTPLAYLIST_SIZE` = Max size of a playlist that is allowed (Number of videos)
 
