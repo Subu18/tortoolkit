@@ -8,23 +8,23 @@
   "success_url": "https://github.com/reaitten/tk",
   "website": "https://github.com/reaitten/tk",
   "env": {
-    "BOT_TOKEN": {
+    "BOT_TOKEN": {2086463870:AAFoUzVffAenlaAVt9-Ex0w4XKLyKzMo9F4
       "description": "Your bot token, as a string.",
       "value": ""
     },
-    "API_ID": {
+    "API_ID": {6805787
       "description": "Get this value from https://my.telegram.org",
       "value": ""
     },
-    "API_HASH": {
+    "API_HASH": {cc7024868cba8df36869160d7f893ef0
       "description": "Get this value from https://my.telegram.org",
       "value": ""
     },
-    "BASE_URL_OF_BOT": {
+    "BASE_URL_OF_BOT": {https://msgttk2.herokuapp.com
       "description": "https://appname.herokuapp.com",
       "value": ""
     },
-    "AUTH_CHANNEL": {
+    "AUTH_CHANNEL": {-1001631860824
       "description": "ALLOWED USERS [ids of user or supergroup] seperate by spaces",
       "value": ""
     },
@@ -91,7 +91,7 @@
       "value": "True",
       "required": false
     },
-    "OWNER_ID": {
+    "OWNER_ID": {1984923207
       "description": "Used to restrict use of certain stuff to owner only.",
       "value": "12345678",
       "required": false
